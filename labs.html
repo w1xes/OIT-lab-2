@@ -7,30 +7,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-somehash" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
-      background: linear-gradient(135deg, #1a1a1a, #333333);
-      color: #f0f0f0;
+      background: #f5f7fa;
+      color: #333333;
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
     }
     .container {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       max-width: 600px;
       margin: 40px auto;
-      padding: 20px;
+      padding: 30px;
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
     h1 {
       font-family: 'Montserrat', sans-serif;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      color: #2c3e50;
     }
     hr {
       border: none;
-      border-top: 1px solid #444;
+      border-top: 1px solid #e0e0e0;
       margin: 20px 0;
     }
     ol {
@@ -46,28 +46,42 @@
       font-size: 1.2em;
     }
     a {
-      color: #4da6ff;
+      color: #3498db;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
     }
     a:hover {
-      color: #aaffff;
+      color: #2980b9;
     }
     .back {
-      margin-top: 20px;
+      margin-top: 25px;
     }
-    .graphic-banner {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
+    .back a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
     }
-    .graphic-banner svg {
-      display: block;
-      width: 100%;
-      height: 30px;
+    .back a:hover {
+      background-color: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    }
+    .lab-link {
+      display: inline-block;
+      padding: 8px 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      transition: all 0.3s ease;
+    }
+    .lab-link:hover {
+      background-color: #e9f5ff;
+      border-color: #3498db;
+      transform: translateX(5px);
     }
   </style>
 </head>
@@ -77,12 +91,12 @@
     <hr>
     <ol>
       <li>
-        <a href="https://github.com/w1xes/OIT-lab-1" target="_blank">
+        <a href="https://github.com/w1xes/OIT-lab-1" target="_blank" class="lab-link">
           <i class="fab fa-github"></i> GitHub: OIT-lab-1
         </a>
       </li>
       <li>
-        <a href="https://github.com/w1xes/OIT-lab-2" target="_blank">
+        <a href="https://github.com/w1xes/OIT-lab-2" target="_blank" class="lab-link">
           <i class="fab fa-github"></i> GitHub: OIT-lab-2
         </a>
       </li>
@@ -90,11 +104,6 @@
     <hr>
     <div class="back">
       <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Повернутися на головну</a>
-    </div>
-    <div class="graphic-banner">
-      <svg viewBox="0 0 500 30" preserveAspectRatio="none">
-        <path d="M0,0 C150,20 350,20 500,0 L500,30 L0,30 Z" style="fill:#333333;"></path>
-      </svg>
     </div>
   </div>
 </body>
