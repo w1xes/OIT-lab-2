@@ -27,23 +27,58 @@
       font-family: 'Montserrat', sans-serif;
       margin-bottom: 15px;
       color: #2c3e50;
+      position: relative;
+      display: inline-block;
+    }
+    h1::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 4px;
+      bottom: -10px;
+      left: 25%;
+      background: linear-gradient(90deg, #3498db, #2ecc71);
+      border-radius: 2px;
     }
     hr {
       border: none;
-      border-top: 1px solid #e0e0e0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
       margin: 20px 0;
     }
     ol {
-      list-style-type: decimal;
-      list-style-position: outside;
-      padding-left: 40px;
-      margin: 0 auto;
-      display: inline-block;
-      text-align: left;
+      list-style-type: none;
+      counter-reset: lab-counter;
+      padding-left: 0;
+      margin: 30px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
     }
     li {
-      margin: 15px 0;
+      margin: 0;
       font-size: 1.2em;
+      counter-increment: lab-counter;
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+    }
+    li::before {
+      content: counter(lab-counter);
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      background-color: #3498db;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
     }
     a {
       color: #3498db;
@@ -71,33 +106,85 @@
       box-shadow: 0 6px 8px rgba(0,0,0,0.15);
     }
     .lab-link {
-      display: inline-block;
-      padding: 8px 15px;
+      display: flex;
+      align-items: center;
+      padding: 15px;
       background-color: #f8f9fa;
       border-radius: 8px;
       border: 1px solid #e0e0e0;
       transition: all 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .lab-link i {
+      font-size: 1.5em;
+      margin-right: 15px;
+      color: #333;
     }
     .lab-link:hover {
       background-color: #e9f5ff;
       border-color: #3498db;
       transform: translateX(5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .page-title {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .code-icon {
+      position: absolute;
+      font-size: 80px;
+      color: rgba(52, 152, 219, 0.1);
+      z-index: -1;
+      animation: rotate 20s linear infinite;
+    }
+    
+    .code-icon-left {
+      left: -40px;
+      top: -20px;
+    }
+    
+    .code-icon-right {
+      right: -40px;
+      top: -20px;
+      animation-direction: reverse;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 2s ease-in-out infinite;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Мої лабораторні роботи з курсу "ОІТ"</h1>
+    <div class="page-title">
+      <i class="fas fa-code code-icon code-icon-left"></i>
+      <h1>Мої лабораторні роботи з курсу "ОІТ"</h1>
+      <i class="fas fa-code code-icon code-icon-right"></i>
+    </div>
     <hr>
     <ol>
       <li>
         <a href="https://github.com/w1xes/OIT-lab-1" target="_blank" class="lab-link">
-          <i class="fab fa-github"></i> GitHub: OIT-lab-1
+          <i class="fab fa-github pulse"></i> GitHub: OIT-lab-1
         </a>
       </li>
       <li>
         <a href="https://github.com/w1xes/OIT-lab-2" target="_blank" class="lab-link">
-          <i class="fab fa-github"></i> GitHub: OIT-lab-2
+          <i class="fab fa-github pulse"></i> GitHub: OIT-lab-2
         </a>
       </li>
     </ol>
